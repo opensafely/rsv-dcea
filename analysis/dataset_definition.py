@@ -116,4 +116,5 @@ dataset.rsv_sc_date = apcs.where(
 
 dataset.rsv_emerg_date = emergency_care_diagnosis_matches(emergency_care_attendances, codelists.rsv_attendance).where(
        emergency_care_attendances.arrival_date
-        .is_on_or_between(dataset.index_date, study_end_date)).arrival_date.minimum_for_patient()
+        .is_on_or_between(dataset.index_date, study_end_date)).where(
+            emergency_care_attendances.discharge_destination.is_in(codelists.discharge_home)).arrival_date.minimum_for_patient()

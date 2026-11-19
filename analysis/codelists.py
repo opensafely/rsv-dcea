@@ -26,4 +26,4 @@ rsv_secondary_codelist = codelist_from_csv(
 rsv_secondary_codelist = expand_three_char_icd10_codes(rsv_secondary_codelist)
 # rsv emergency attendances - specific
 rsv_attendance = ["50417007"]
-
+discharge_home = ["306689006"]
